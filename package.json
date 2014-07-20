@@ -1,0 +1,24 @@
+{
+  "name": "blocked-sites",
+  "version": "0.0.0",
+  "description": "uk blocked sites",
+  "main": "web.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umaar/blocked-sites.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umaar/blocked-sites/issues"
+  },
+  "homepage": "https://github.com/umaar/blocked-sites",
+  "dependencies": {
+    "logfmt": "~1.1.2",
+    "express": "~4.6.1"
+  }
+}
