@@ -1,4 +1,4 @@
-(function(global) {
+(function() {
 
 	var key = "SXGWLZPDOKFIVUHJYTQBNMACERxswgzldpkoifuvjhtybqmncare";
 
@@ -42,7 +42,13 @@
 	}
 
 	$(function() {
-		var blocked = getListOfSites(global.blockedSites);
-		addToDom(blocked);
+
+		$.ajax({
+			url: "blockedSites.txt"
+		}).done(function(e) {
+			var blocked = getListOfSites(e);
+			addToDom(blocked);
+		});
+
 	});
-}(window));
+}());
