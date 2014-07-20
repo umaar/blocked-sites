@@ -7,17 +7,45 @@
 	<style>
 	body {
 		font-family: 'Lato', sans-serif;
+		margin: 1%;
+	}
+
+	header {
+		margin: 40px auto;
+	}
+
+	.blocked-urls-message {
+		display: none;
 	}
 
 	.blocked-sites {
 		-webkit-column-count: 3;
 		line-height: 19px;
 	}
+
+	@media screen and (min-width: 651px) {
+		.blocked-sites {
+			-webkit-column-count: 3;
+		}
+	}
+
+	@media screen and (min-width: 320px) and (max-width: 650px) {
+		.blocked-sites {
+			-webkit-column-count: 2;
+		}
+	}
 	</style>
 </head>
 <body>
 
-<div class="container"></div>
+<div class="container">
+	<header>
+		<h5>What sites are blocked ISP in the UK?</h5>
+		<p>List of sites taken from <a href="https://www.blocked.org.uk">Blocked.org.uk</a>. Currently inclused all ISPs.</p>
+		<p class="blocked-urls-message">There are <span class="blocked-url-count"></span> blocked URLs. </p>
+	</header>
+
+</div>
 
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="blockedSites.js"></script>

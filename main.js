@@ -21,6 +21,12 @@
 		});
 	}
 
+	function showMessage(data) {
+		var message = $('.blocked-urls-message');
+		message.find('.blocked-url-count').text(data.length);
+		message.fadeIn();
+	}
+
 	function addToDom(data) {
 		var list = $('<ul>').addClass('blocked-sites');
 		data.forEach(function(item) {
@@ -29,6 +35,10 @@
 			list.append(li);
 		});
 		$('.container').append(list);
+
+		setTimeout(function() {
+			showMessage(data);
+		}, 1000);
 	}
 
 	$(function() {
