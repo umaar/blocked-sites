@@ -8,6 +8,12 @@ var url = require('url');
 var interval;
 var blockedUrlsLink = 'https://api.blocked.org.uk/data/export.csv.gz';
 
+var ignoreProviders = [
+	'TalkTalk Strict',
+	'BT-Moderate',
+	'BT-Strict'
+];
+
 function progressEvents() {
 	interval = setInterval(function() {
 		console.log('blockedUrls length', blockedUrls.length);
@@ -31,15 +37,18 @@ function encode(uncoded) {
 	return encodeURIComponent(coded);
 }
 
-function processData(data) {
+function recordMeetsCriteria(data) {
 	var url = data[0].replace('http://', '');
-	if (data[4] === "blocked" && blockedUrls.indexOf(url) === -1) {
+	if (
+		data[4] === "blocked" &&
+		ignoreProviders.indexOf(data[2]) === -1 &&
+		blockedUrls.indexOf(url) === -1) {
 		return url;
 	}
 }
 
 function handleRecord(data) {
-	var url = processData(data);
+	var url = recordMeetsCriteria(data);
 	if (url) {
 		blockedUrls.push(url);
 	}

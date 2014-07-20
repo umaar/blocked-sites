@@ -1,4 +1,7 @@
 node_modules
+export.csv
+export.csv.gz
+
 
 # Compiled source #
 ###################
