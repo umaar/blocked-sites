@@ -21,7 +21,7 @@
     "logfmt": "~1.1.2",
     "express": "~4.6.1"
   },
-  "devDependencies": {
+  "dependencies": {
     "compression": "~1.0.8"
   }
 }
