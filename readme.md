@@ -1,0 +1,1 @@
+Creates a simple list of domains from the Blocked nightly snapshot.
