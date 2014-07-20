@@ -48,6 +48,7 @@
 		}).done(function(e) {
 			var blocked = getListOfSites(e);
 			addToDom(blocked);
+			$('.spinner').fadeOut();
 		});
 
 	});
