@@ -57,7 +57,7 @@ function handleRecord(data) {
 function writeFile(urls) {
 	var data = urls.map(encode).toString();
 	var file = fs.createWriteStream('blockedSites.txt');
-	file.on('error', function(err) { console.log('error', err) });
+	file.on('error', function(err) { console.log('error', err); });
 	file.write( '"' + data + '"');
 	file.end();
 }
